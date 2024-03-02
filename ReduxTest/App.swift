@@ -16,7 +16,7 @@ struct ReduxTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppTapBarView()
+            AppTabBarView()
                 .environmentObject(store)
         }
     }
