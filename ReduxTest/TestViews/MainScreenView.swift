@@ -12,7 +12,6 @@ struct MainScreenView: View {
     
     @State private var selectedTab: Tab2 = .home
     
-    
     var body: some View {
         TabView(selection: $selectedTab) {
             HomeScreenView()

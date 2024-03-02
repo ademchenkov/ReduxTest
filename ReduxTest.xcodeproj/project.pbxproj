@@ -18,6 +18,12 @@
 		597783552B76D38C00FB451A /* Test1ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597783542B76D38C00FB451A /* Test1ScreenView.swift */; };
 		597783572B76D3B200FB451A /* Test2ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597783562B76D3B200FB451A /* Test2ScreenView.swift */; };
 		59BD166F2B87FC4800D70CFB /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */; };
+		59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */; };
+		59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */; };
+		59CBFED42B9389530033AFBF /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED32B9389530033AFBF /* AppTabBarView.swift */; };
+		59CBFED62B93921E0033AFBF /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED52B93921E0033AFBF /* TabBarItem.swift */; };
+		59CBFEDF2B93A9D30033AFBF /* AppTabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEDE2B93A9D30033AFBF /* AppTabBarState.swift */; };
+		59CBFEE12B93AB910033AFBF /* AppTapBarStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEE02B93AB910033AFBF /* AppTapBarStateAction.swift */; };
 		59F179912B8950FA007CCBC4 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179902B8950FA007CCBC4 /* Manrope-Regular.ttf */; };
 		59F179932B895105007CCBC4 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179922B895105007CCBC4 /* Manrope-Bold.ttf */; };
 		59F179952B895110007CCBC4 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179942B895110007CCBC4 /* Manrope-Medium.ttf */; };
@@ -41,6 +47,12 @@
 		597783542B76D38C00FB451A /* Test1ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1ScreenView.swift; sourceTree = "<group>"; };
 		597783562B76D3B200FB451A /* Test2ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ScreenView.swift; sourceTree = "<group>"; };
 		59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
+		59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		59CBFED32B9389530033AFBF /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
+		59CBFED52B93921E0033AFBF /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		59CBFEDE2B93A9D30033AFBF /* AppTabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarState.swift; sourceTree = "<group>"; };
+		59CBFEE02B93AB910033AFBF /* AppTapBarStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTapBarStateAction.swift; sourceTree = "<group>"; };
 		59F1798D2B894E1A007CCBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		59F179902B8950FA007CCBC4 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
 		59F179922B895105007CCBC4 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
@@ -67,6 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				5910FA662B8D214D0076B6C0 /* CustomTabBarView.swift */,
+				59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */,
+				59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */,
+				59CBFED52B93921E0033AFBF /* TabBarItem.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -74,24 +89,9 @@
 		5928E5132B78249900FFEC85 /* AppState */ = {
 			isa = PBXGroup;
 			children = (
-				6DCA9D5D2B88E3650064DFB9 /* MainScreenState.swift */,
 				5928E5142B7824AD00FFEC85 /* AppState.swift */,
-				5928E51A2B7825BC00FFEC85 /* Test1ScreenState.swift */,
-				5928E51D2B78263500FFEC85 /* Test2ScreenState.swift */,
 			);
 			path = AppState;
-			sourceTree = "<group>";
-		};
-		5928E5202B782FB500FFEC85 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				59F1799E2B8A2F8D007CCBC4 /* TestViews */,
-				59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */,
-				59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */,
-				59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */,
-				59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		597783382B76C90300FB451A = {
@@ -117,7 +117,9 @@
 				59F179882B893499007CCBC4 /* Fonts */,
 				59BA7C7A2B7A324200C91211 /* Models */,
 				59BD16702B88A76D00D70CFB /* Components */,
-				5928E5202B782FB500FFEC85 /* Views */,
+				59CBFED72B93A81F0033AFBF /* Modules */,
+				59F1799E2B8A2F8D007CCBC4 /* TestViews */,
+				59CBFEDD2B93A8EB0033AFBF /* TestStates */,
 				5928E5132B78249900FFEC85 /* AppState */,
 				597783442B76C90300FB451A /* App.swift */,
 				597783522B76C96D00FB451A /* Store.swift */,
@@ -148,6 +150,70 @@
 				5910FA652B8D20E80076B6C0 /* CustomTabBar */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		59CBFED72B93A81F0033AFBF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				59CBFED82B93A8330033AFBF /* AppTapBar */,
+				59CBFED92B93A83E0033AFBF /* HomeScreen */,
+				59CBFEDA2B93A84E0033AFBF /* CatalogScreen */,
+				59CBFEDB2B93A8600033AFBF /* AccountScreen */,
+				59CBFEDC2B93A86A0033AFBF /* BagScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		59CBFED82B93A8330033AFBF /* AppTapBar */ = {
+			isa = PBXGroup;
+			children = (
+				59CBFED32B9389530033AFBF /* AppTabBarView.swift */,
+				59CBFEDE2B93A9D30033AFBF /* AppTabBarState.swift */,
+				59CBFEE02B93AB910033AFBF /* AppTapBarStateAction.swift */,
+			);
+			path = AppTapBar;
+			sourceTree = "<group>";
+		};
+		59CBFED92B93A83E0033AFBF /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		59CBFEDA2B93A84E0033AFBF /* CatalogScreen */ = {
+			isa = PBXGroup;
+			children = (
+				59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */,
+			);
+			path = CatalogScreen;
+			sourceTree = "<group>";
+		};
+		59CBFEDB2B93A8600033AFBF /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */,
+			);
+			path = AccountScreen;
+			sourceTree = "<group>";
+		};
+		59CBFEDC2B93A86A0033AFBF /* BagScreen */ = {
+			isa = PBXGroup;
+			children = (
+				59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */,
+			);
+			path = BagScreen;
+			sourceTree = "<group>";
+		};
+		59CBFEDD2B93A8EB0033AFBF /* TestStates */ = {
+			isa = PBXGroup;
+			children = (
+				6DCA9D5D2B88E3650064DFB9 /* MainScreenState.swift */,
+				5928E51A2B7825BC00FFEC85 /* Test1ScreenState.swift */,
+				5928E51D2B78263500FFEC85 /* Test2ScreenState.swift */,
+			);
+			path = TestStates;
 			sourceTree = "<group>";
 		};
 		59F179882B893499007CCBC4 /* Fonts */ = {
@@ -247,16 +313,22 @@
 				59F179972B8A2F16007CCBC4 /* CatalogScreenView.swift in Sources */,
 				597783572B76D3B200FB451A /* Test2ScreenView.swift in Sources */,
 				597783552B76D38C00FB451A /* Test1ScreenView.swift in Sources */,
+				59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */,
 				5928E51E2B78263500FFEC85 /* Test2ScreenState.swift in Sources */,
 				5928E5152B7824AD00FFEC85 /* AppState.swift in Sources */,
+				59CBFEE12B93AB910033AFBF /* AppTapBarStateAction.swift in Sources */,
+				59CBFEDF2B93A9D30033AFBF /* AppTabBarState.swift in Sources */,
 				6DCA9D5C2B88E3460064DFB9 /* MainScreenView.swift in Sources */,
 				597783452B76C90300FB451A /* App.swift in Sources */,
 				5928E51B2B7825BC00FFEC85 /* Test1ScreenState.swift in Sources */,
 				59F1799B2B8A2F39007CCBC4 /* BagScreenView.swift in Sources */,
 				59BD166F2B87FC4800D70CFB /* HomeScreenView.swift in Sources */,
+				59CBFED62B93921E0033AFBF /* TabBarItem.swift in Sources */,
 				59F179992B8A2F2A007CCBC4 /* AccountScreenView.swift in Sources */,
 				6DCA9D5E2B88E3650064DFB9 /* MainScreenState.swift in Sources */,
 				597783532B76C96D00FB451A /* Store.swift in Sources */,
+				59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */,
+				59CBFED42B9389530033AFBF /* AppTabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

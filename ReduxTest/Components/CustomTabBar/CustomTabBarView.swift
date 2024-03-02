@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomTabBarView: View {
     
+    @Binding var selection: TabBarItem
     let tabs: [TabBarItem]
     
     var body: some View {
@@ -16,20 +17,22 @@ struct CustomTabBarView: View {
             ForEach(tabs, id: \.self) { tab in
                 Spacer()
                 tabView(tab: tab)
+                    .onTapGesture {
+                        switchToTab(tab: tab)
+                    }
                 Spacer()
             }
         }
         .padding(.horizontal, 24)
         .padding(.top, 8)
-        .padding(.bottom, 20)
-        .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60, alignment: .top)
+        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 40, alignment: .top)
         .background(Color(red: 0.35, green: 0.34, blue: 0.34))
-        
-        .overlay(
-            Rectangle()
-                .inset(by: 0.25)
-                .stroke(.white, lineWidth: 0.5)
-        )
+    }
+    
+    private func switchToTab(tab: TabBarItem) {
+        withAnimation(.easeInOut.speed(1.3)) {
+            selection = tab
+        }
     }
 }
 
@@ -39,30 +42,26 @@ extension CustomTabBarView {
         VStack(alignment: .center, spacing: 10) {
             Text(tab.title)
                 .font(TabBarStyle.font)
+                .fontWeight(selection == tab ? .black : .medium)
                 .foregroundColor(TabBarStyle.textColor)
         }
-        .padding(.vertical, 8)
+        .padding(.top, 8)
+        .padding(.bottom, 32)
+        .frame(maxHeight: .infinity)
         .background(TabBarStyle.backgroundColor)
     }
-}
-    
-struct TabBarItem: Hashable {
-    let title: String
-}
-    
-struct TabBarStyle {
-    static let textColor: Color = .white
-    static let backgroundColor: Color = .firmGray
-    static let font: Font = .custom("Manrope", size: 14)
 }
 
 #Preview {
     let tabs: [TabBarItem] = [
-        TabBarItem(title: "HOME"),
-        TabBarItem(title: "CATALOG"),
-        TabBarItem(title: "ACCOUNT"),
-        TabBarItem(title: "BAG")
+        .home,
+        .catalog,
+        .account,
+        .bag
     ]
     
-    return CustomTabBarView(tabs: tabs)
+    return VStack {
+        Spacer()
+        CustomTabBarView(selection: .constant(tabs.first!), tabs: tabs)
+    }
 }
