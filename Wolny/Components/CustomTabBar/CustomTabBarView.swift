@@ -24,8 +24,8 @@ struct CustomTabBarView: View {
             }
         }
         .padding(.horizontal, 24)
-        .padding(.top, 8)
-        .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 40, alignment: .top)
+        .padding(.top, 4)
+        .frame(maxWidth: .infinity, minHeight: 32, maxHeight: 32, alignment: .top)
         .background(Color(red: 0.35, green: 0.34, blue: 0.34))
     }
     

@@ -24,9 +24,3 @@ enum TabBarItem: Hashable {
         }
     }
 }
-    
-struct TabBarStyle {
-    static let textColor: Color = .white
-    static let backgroundColor: Color = .firmGray
-    static let font: Font = .custom("Manrope", size: 15)
-}

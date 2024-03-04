@@ -24,6 +24,7 @@ struct CustomTabBarContainerView<Content: View>: View {
                 content
             }
             CustomTabBarView(selection: $selection, tabs: tabs)
+                .environment(\.colorScheme, .light)
         }
         .onPreferenceChange(TabBarItemsPreferenceKey.self, perform: { value in
             self.tabs = value

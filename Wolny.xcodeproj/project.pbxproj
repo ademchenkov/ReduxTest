@@ -24,12 +24,16 @@
 		59CBFED62B93921E0033AFBF /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED52B93921E0033AFBF /* TabBarItem.swift */; };
 		59CBFEDF2B93A9D30033AFBF /* AppTabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEDE2B93A9D30033AFBF /* AppTabBarState.swift */; };
 		59CBFEE12B93AB910033AFBF /* AppTapBarStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEE02B93AB910033AFBF /* AppTapBarStateAction.swift */; };
+		59CBFEE82B94930D0033AFBF /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEE72B94930D0033AFBF /* ProductCardView.swift */; };
+		59CBFEEA2B9496730033AFBF /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEE92B9496730033AFBF /* AppStyle.swift */; };
+		59CBFEEC2B9519FC0033AFBF /* ProductCardsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFEEB2B9519FC0033AFBF /* ProductCardsGridView.swift */; };
 		59F179912B8950FA007CCBC4 /* Manrope-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179902B8950FA007CCBC4 /* Manrope-Regular.ttf */; };
 		59F179932B895105007CCBC4 /* Manrope-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179922B895105007CCBC4 /* Manrope-Bold.ttf */; };
 		59F179952B895110007CCBC4 /* Manrope-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59F179942B895110007CCBC4 /* Manrope-Medium.ttf */; };
 		59F179972B8A2F16007CCBC4 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */; };
 		59F179992B8A2F2A007CCBC4 /* AccountScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */; };
 		59F1799B2B8A2F39007CCBC4 /* BagScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */; };
+		59F3ED7D2B96700300A86DD7 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3ED7C2B96700300A86DD7 /* ProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +41,7 @@
 		5928E5142B7824AD00FFEC85 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5928E51A2B7825BC00FFEC85 /* Test1ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1ScreenState.swift; sourceTree = "<group>"; };
 		5928E51D2B78263500FFEC85 /* Test2ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ScreenState.swift; sourceTree = "<group>"; };
-		597783412B76C90300FB451A /* ReduxTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		597783412B76C90300FB451A /* Wolny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wolny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		597783442B76C90300FB451A /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		597783482B76C90500FB451A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5977834B2B76C90500FB451A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,6 +55,9 @@
 		59CBFED52B93921E0033AFBF /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		59CBFEDE2B93A9D30033AFBF /* AppTabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarState.swift; sourceTree = "<group>"; };
 		59CBFEE02B93AB910033AFBF /* AppTapBarStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTapBarStateAction.swift; sourceTree = "<group>"; };
+		59CBFEE72B94930D0033AFBF /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		59CBFEE92B9496730033AFBF /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		59CBFEEB2B9519FC0033AFBF /* ProductCardsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardsGridView.swift; sourceTree = "<group>"; };
 		59F1798D2B894E1A007CCBC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		59F179902B8950FA007CCBC4 /* Manrope-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Regular.ttf"; sourceTree = "<group>"; };
 		59F179922B895105007CCBC4 /* Manrope-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Manrope-Bold.ttf"; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 		59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
 		59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreenView.swift; sourceTree = "<group>"; };
 		59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagScreenView.swift; sourceTree = "<group>"; };
+		59F3ED7C2B96700300A86DD7 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5928E5142B7824AD00FFEC85 /* AppState.swift */,
+				59CBFEE92B9496730033AFBF /* AppStyle.swift */,
 			);
 			path = AppState;
 			sourceTree = "<group>";
@@ -93,7 +102,7 @@
 		597783382B76C90300FB451A = {
 			isa = PBXGroup;
 			children = (
-				597783432B76C90300FB451A /* ReduxTest */,
+				597783432B76C90300FB451A /* Wolny */,
 				597783422B76C90300FB451A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,12 +110,12 @@
 		597783422B76C90300FB451A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				597783412B76C90300FB451A /* ReduxTest.app */,
+				597783412B76C90300FB451A /* Wolny.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		597783432B76C90300FB451A /* ReduxTest */ = {
+		597783432B76C90300FB451A /* Wolny */ = {
 			isa = PBXGroup;
 			children = (
 				59F1798D2B894E1A007CCBC4 /* Info.plist */,
@@ -122,7 +131,7 @@
 				597783482B76C90500FB451A /* Assets.xcassets */,
 				5977834A2B76C90500FB451A /* Preview Content */,
 			);
-			path = ReduxTest;
+			path = Wolny;
 			sourceTree = "<group>";
 		};
 		5977834A2B76C90500FB451A /* Preview Content */ = {
@@ -143,6 +152,8 @@
 		59BD16702B88A76D00D70CFB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				59F3ED7B2B966F8800A86DD7 /* ProductDetailCard */,
+				59CBFEE62B9492F30033AFBF /* ProductCard */,
 				5910FA652B8D20E80076B6C0 /* CustomTabBar */,
 			);
 			path = Components;
@@ -211,6 +222,15 @@
 			path = TestStates;
 			sourceTree = "<group>";
 		};
+		59CBFEE62B9492F30033AFBF /* ProductCard */ = {
+			isa = PBXGroup;
+			children = (
+				59CBFEE72B94930D0033AFBF /* ProductCardView.swift */,
+				59CBFEEB2B9519FC0033AFBF /* ProductCardsGridView.swift */,
+			);
+			path = ProductCard;
+			sourceTree = "<group>";
+		};
 		59F179882B893499007CCBC4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +250,20 @@
 			path = TestViews;
 			sourceTree = "<group>";
 		};
+		59F3ED7B2B966F8800A86DD7 /* ProductDetailCard */ = {
+			isa = PBXGroup;
+			children = (
+				59F3ED7C2B96700300A86DD7 /* ProductDetailView.swift */,
+			);
+			path = ProductDetailCard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		597783402B76C90300FB451A /* ReduxTest */ = {
+		597783402B76C90300FB451A /* Wolny */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5977834F2B76C90500FB451A /* Build configuration list for PBXNativeTarget "ReduxTest" */;
+			buildConfigurationList = 5977834F2B76C90500FB451A /* Build configuration list for PBXNativeTarget "Wolny" */;
 			buildPhases = (
 				5977833D2B76C90300FB451A /* Sources */,
 				5977833E2B76C90300FB451A /* Frameworks */,
@@ -245,9 +273,9 @@
 			);
 			dependencies = (
 			);
-			name = ReduxTest;
+			name = Wolny;
 			productName = ReduxTest;
-			productReference = 597783412B76C90300FB451A /* ReduxTest.app */;
+			productReference = 597783412B76C90300FB451A /* Wolny.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5977833C2B76C90300FB451A /* Build configuration list for PBXProject "ReduxTest" */;
+			buildConfigurationList = 5977833C2B76C90300FB451A /* Build configuration list for PBXProject "Wolny" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -278,7 +306,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				597783402B76C90300FB451A /* ReduxTest */,
+				597783402B76C90300FB451A /* Wolny */,
 			);
 		};
 /* End PBXProject section */
@@ -314,10 +342,14 @@
 				59CBFEDF2B93A9D30033AFBF /* AppTabBarState.swift in Sources */,
 				597783452B76C90300FB451A /* App.swift in Sources */,
 				5928E51B2B7825BC00FFEC85 /* Test1ScreenState.swift in Sources */,
+				59CBFEEA2B9496730033AFBF /* AppStyle.swift in Sources */,
 				59F1799B2B8A2F39007CCBC4 /* BagScreenView.swift in Sources */,
+				59F3ED7D2B96700300A86DD7 /* ProductDetailView.swift in Sources */,
 				59BD166F2B87FC4800D70CFB /* HomeScreenView.swift in Sources */,
 				59CBFED62B93921E0033AFBF /* TabBarItem.swift in Sources */,
+				59CBFEEC2B9519FC0033AFBF /* ProductCardsGridView.swift in Sources */,
 				59F179992B8A2F2A007CCBC4 /* AccountScreenView.swift in Sources */,
+				59CBFEE82B94930D0033AFBF /* ProductCardView.swift in Sources */,
 				597783532B76C96D00FB451A /* Store.swift in Sources */,
 				59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */,
 				59CBFED42B9389530033AFBF /* AppTabBarView.swift in Sources */,
@@ -453,26 +485,31 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ReduxTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Wolny/Preview Content\"";
 				DEVELOPMENT_TEAM = TMNNX4FSUZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReduxTest/Info.plist;
+				INFOPLIST_FILE = Wolny/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DA.ReduxTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Wolny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -483,33 +520,38 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ReduxTest/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Wolny/Preview Content\"";
 				DEVELOPMENT_TEAM = TMNNX4FSUZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ReduxTest/Info.plist;
+				INFOPLIST_FILE = Wolny/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DA.ReduxTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Wolny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5977833C2B76C90300FB451A /* Build configuration list for PBXProject "ReduxTest" */ = {
+		5977833C2B76C90300FB451A /* Build configuration list for PBXProject "Wolny" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5977834D2B76C90500FB451A /* Debug */,
@@ -518,7 +560,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5977834F2B76C90500FB451A /* Build configuration list for PBXNativeTarget "ReduxTest" */ = {
+		5977834F2B76C90500FB451A /* Build configuration list for PBXNativeTarget "Wolny" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				597783502B76C90500FB451A /* Debug */,
