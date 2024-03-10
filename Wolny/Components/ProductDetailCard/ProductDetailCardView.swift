@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailProductCardView: View {
+struct ProductDetailCardView: View {
     @State private var product: Product
     
     init(
@@ -18,24 +18,28 @@ struct DetailProductCardView: View {
         
     var body: some View {
         
-        VStack() {
-            HStack() {
-                Image("back-icon")
-                    .resizable()
-                    .scaledToFit()
-                Spacer()
+        ScrollView() {
+            VStack() {
+                HStack() {
+                    Image("back-icon")
+                        .resizable()
+                        .scaledToFit()
+                    Spacer()
+                }
+                .frame(maxHeight: 16)
+                .padding(.horizontal, 8)
             }
-            .frame(maxHeight: 16)
-            .padding(.horizontal, 8)
+            
+            ProductCardView(product: product)
+            productSizes(sizes: product.sizes)
+            productDescriptions(descriptions: product.descriptions)
         }
         
-        ProductCardView(product: product)        
-        productSizes(sizes: product.sizes)
-        productDescriptions(descriptions: product.descriptions)
+
     }
 }
 
-extension DetailProductCardView {
+extension ProductDetailCardView {
     func productSizes(sizes: [ProductSize]? = []) -> some View {
         
         let sizes = sizes!.prefix(4)
@@ -66,7 +70,7 @@ extension DetailProductCardView {
     }
 }
 
-extension DetailProductCardView {
+extension ProductDetailCardView {
     func productDescriptions(descriptions: [Description]? = []) -> some View {
         
         let descriptions = product.descriptions
@@ -117,5 +121,5 @@ extension DetailProductCardView {
         ]
     )
   
-    return DetailProductCardView(product: product)
+    return ProductDetailCardView(product: product)
 }
