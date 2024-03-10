@@ -23,7 +23,7 @@ struct HomeScreenView: View {
             VStack {
                 Text("JUST BEGIN / Spring'24")
                     .foregroundColor(.white)
-                Image("wolny_white_vector")
+                Image("wolny-white-logo")
             }
         }
         .frame(maxHeight: .infinity)

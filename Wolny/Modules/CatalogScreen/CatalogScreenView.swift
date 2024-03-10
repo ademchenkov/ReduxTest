@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct CatalogScreenView: View {
+    
+    @State private var product: Product
+    
+    init(
+        product: Product
+    ) {
+        self.product = product
+    }
+    
     var body: some View {
         VStack {
             header()
@@ -15,7 +24,7 @@ struct CatalogScreenView: View {
                 .padding(.top, 8)
                 .padding(.bottom, 0)
                 .frame(maxWidth: .infinity, maxHeight: 40)
-            ProductCardsGridView()
+            ProductCardView(product: product)
         }
     }
 }
@@ -45,5 +54,42 @@ extension CatalogScreenView {
 
 
 #Preview {
-    CatalogScreenView()
+    let product = Product(
+        productName: "AUTUMN / BROWN COAT / CLASSIC",
+        image: "sample3",
+        hasSale: true,
+        fullPrice: "10000 ₽",
+        salePrice: "8000 ₽",
+        advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+        sizes: [
+            ProductSize(name: "XS", inStock: true),
+            ProductSize(name: "S", inStock: true),
+            ProductSize(name: "M", inStock: false),
+            ProductSize(name: "L", inStock: true),
+        ],
+        descriptions: [
+            Description(
+                isExpanded: true,
+                title: "Подробнее об изделии",
+                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+            ),
+            Description(
+                isExpanded: false,
+                title: "Подобрать размер",
+                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+            ),
+            Description(
+                isExpanded: false,
+                title: "Состав",
+                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+            ),
+            Description(
+                isExpanded: false,
+                title: "Уход",
+                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+            )
+        ]
+    )
+  
+    return CatalogScreenView(product: product)
 }

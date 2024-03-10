@@ -41,14 +41,14 @@ extension CustomTabBarView {
     private func tabView(tab: TabBarItem) -> some View {
         VStack(alignment: .center, spacing: 10) {
             Text(tab.title)
-                .font(TabBarStyle.font)
+                .font(CustomTabBarViewStyle.font)
                 .fontWeight(selection == tab ? .black : .medium)
-                .foregroundColor(TabBarStyle.textColor)
+                .foregroundColor(CustomTabBarViewStyle.textColor)
         }
         .padding(.top, 8)
         .padding(.bottom, 32)
         .frame(maxHeight: .infinity)
-        .background(TabBarStyle.backgroundColor)
+        .background(CustomTabBarViewStyle.backgroundColor)
     }
 }
 

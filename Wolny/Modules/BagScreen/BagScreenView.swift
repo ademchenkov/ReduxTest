@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BagScreenView: View {
     var body: some View {
-        Text("BAG SCREEN")
+        Text("Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies.")
     }
 }
 

@@ -45,13 +45,6 @@ struct Test1ScreenView: View {
                 }
                 .frame(width: 300, height: 200)
                 
-                Divider()
-                NavigationLink {
-                    Test2ScreenView().environmentObject(store)
-                } label: {
-                    Label("Profile", systemImage: "bolt.fill")
-                }
-                .frame(width: 300, height: 100)
             }
         }
     }
