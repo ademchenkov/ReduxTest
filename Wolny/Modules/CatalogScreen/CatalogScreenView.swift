@@ -24,7 +24,7 @@ struct CatalogScreenView: View {
                 .padding(.top, 8)
                 .padding(.bottom, 0)
                 .frame(maxWidth: .infinity, maxHeight: 40)
-            ProductCardView(product: product)
+            ProductDetailCardView(product: product)
         }
     }
 }
@@ -69,22 +69,18 @@ extension CatalogScreenView {
         ],
         descriptions: [
             Description(
-                isExpanded: true,
                 title: "Подробнее об изделии",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Подобрать размер",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Состав",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Уход",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             )

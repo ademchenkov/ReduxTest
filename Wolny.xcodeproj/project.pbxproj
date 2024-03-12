@@ -16,9 +16,7 @@
 		5977834C2B76C90500FB451A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5977834B2B76C90500FB451A /* Preview Assets.xcassets */; };
 		597783532B76C96D00FB451A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597783522B76C96D00FB451A /* Store.swift */; };
 		597783552B76D38C00FB451A /* Test1ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597783542B76D38C00FB451A /* Test1ScreenView.swift */; };
-		598BFAC12B9DB46300984F13 /* ExpandableDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598BFAC02B9DB46300984F13 /* ExpandableDescriptionView.swift */; };
 		598BFAC32B9E46BC00984F13 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598BFAC22B9E46BC00984F13 /* ProductModel.swift */; };
-		59B9B7922B9B0DC300239B08 /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B9B7912B9B0DC300239B08 /* PriceView.swift */; };
 		59BD166F2B87FC4800D70CFB /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */; };
 		59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */; };
 		59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */; };
@@ -34,7 +32,7 @@
 		59F179972B8A2F16007CCBC4 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */; };
 		59F179992B8A2F2A007CCBC4 /* AccountScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */; };
 		59F1799B2B8A2F39007CCBC4 /* BagScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */; };
-		59F3ED812B96771000A86DD7 /* DetailProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3ED802B96771000A86DD7 /* DetailProductCardView.swift */; };
+		59F3ED812B96771000A86DD7 /* ProductDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3ED802B96771000A86DD7 /* ProductDetailCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +46,7 @@
 		5977834B2B76C90500FB451A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		597783522B76C96D00FB451A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		597783542B76D38C00FB451A /* Test1ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1ScreenView.swift; sourceTree = "<group>"; };
-		598BFAC02B9DB46300984F13 /* ExpandableDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableDescriptionView.swift; sourceTree = "<group>"; };
 		598BFAC22B9E46BC00984F13 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		59B9B7912B9B0DC300239B08 /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		59BD166E2B87FC4800D70CFB /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
@@ -67,7 +63,7 @@
 		59F179962B8A2F16007CCBC4 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
 		59F179982B8A2F2A007CCBC4 /* AccountScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountScreenView.swift; sourceTree = "<group>"; };
 		59F1799A2B8A2F39007CCBC4 /* BagScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagScreenView.swift; sourceTree = "<group>"; };
-		59F3ED802B96771000A86DD7 /* DetailProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductCardView.swift; sourceTree = "<group>"; };
+		59F3ED802B96771000A86DD7 /* ProductDetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,22 +140,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		598BFABF2B9DB3FC00984F13 /* ExpandableDescriptionView */ = {
-			isa = PBXGroup;
-			children = (
-				598BFAC02B9DB46300984F13 /* ExpandableDescriptionView.swift */,
-			);
-			path = ExpandableDescriptionView;
-			sourceTree = "<group>";
-		};
-		59B9B7902B9B0D8500239B08 /* PriceView */ = {
-			isa = PBXGroup;
-			children = (
-				59B9B7912B9B0DC300239B08 /* PriceView.swift */,
-			);
-			path = PriceView;
-			sourceTree = "<group>";
-		};
 		59BA7C7A2B7A324200C91211 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +151,6 @@
 		59BD16702B88A76D00D70CFB /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				598BFABF2B9DB3FC00984F13 /* ExpandableDescriptionView */,
-				59B9B7902B9B0D8500239B08 /* PriceView */,
 				59F3ED7B2B966F8800A86DD7 /* ProductDetailCard */,
 				59CBFEE62B9492F30033AFBF /* ProductCard */,
 				5910FA652B8D20E80076B6C0 /* CustomTabBar */,
@@ -272,7 +250,7 @@
 		59F3ED7B2B966F8800A86DD7 /* ProductDetailCard */ = {
 			isa = PBXGroup;
 			children = (
-				59F3ED802B96771000A86DD7 /* DetailProductCardView.swift */,
+				59F3ED802B96771000A86DD7 /* ProductDetailCardView.swift */,
 			);
 			path = ProductDetailCard;
 			sourceTree = "<group>";
@@ -353,7 +331,7 @@
 				5910FA672B8D214D0076B6C0 /* CustomTabBarView.swift in Sources */,
 				59F179972B8A2F16007CCBC4 /* CatalogScreenView.swift in Sources */,
 				597783552B76D38C00FB451A /* Test1ScreenView.swift in Sources */,
-				59F3ED812B96771000A86DD7 /* DetailProductCardView.swift in Sources */,
+				59F3ED812B96771000A86DD7 /* ProductDetailCardView.swift in Sources */,
 				59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */,
 				5928E51E2B78263500FFEC85 /* AccountScreenState.swift in Sources */,
 				5928E5152B7824AD00FFEC85 /* AppState.swift in Sources */,
@@ -369,8 +347,6 @@
 				59F179992B8A2F2A007CCBC4 /* AccountScreenView.swift in Sources */,
 				59CBFEE82B94930D0033AFBF /* ProductCardView.swift in Sources */,
 				597783532B76C96D00FB451A /* Store.swift in Sources */,
-				598BFAC12B9DB46300984F13 /* ExpandableDescriptionView.swift in Sources */,
-				59B9B7922B9B0DC300239B08 /* PriceView.swift in Sources */,
 				59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */,
 				59CBFED42B9389530033AFBF /* AppTabBarView.swift in Sources */,
 			);

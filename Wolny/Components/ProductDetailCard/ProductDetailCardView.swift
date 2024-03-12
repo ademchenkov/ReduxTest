@@ -9,15 +9,14 @@ import SwiftUI
 
 struct ProductDetailCardView: View {
     @State private var product: Product
+    @State private var expandedDescriptions: [Bool]
     
-    init(
-        product: Product
-    ) {
-        self.product = product
+    init(product: Product) {
+        self._product = State(initialValue: product)
+        self._expandedDescriptions = State(initialValue: Array(repeating: true, count: product.descriptions.count))
     }
         
     var body: some View {
-        
         ScrollView() {
             VStack() {
                 HStack() {
@@ -32,15 +31,13 @@ struct ProductDetailCardView: View {
             
             ProductCardView(product: product)
             productSizes(sizes: product.sizes)
-            productDescriptions(descriptions: product.descriptions)
+            productDescriptionsView()
         }
-        
-
     }
 }
 
 extension ProductDetailCardView {
-    func productSizes(sizes: [ProductSize]? = []) -> some View {
+    private func productSizes(sizes: [ProductSize]? = []) -> some View {
         
         let sizes = sizes!.prefix(4)
         
@@ -71,13 +68,53 @@ extension ProductDetailCardView {
 }
 
 extension ProductDetailCardView {
-    func productDescriptions(descriptions: [Description]? = []) -> some View {
+
+    private func productDescriptionsView() -> some View {
+        ForEach(Array(product.descriptions.enumerated()), id: \.element) { index, description in
+            expandableDescriptionView(description: description, index: index)
+        }
+    }
+    
+    private func toggleDescription(index: Int) {
+        expandedDescriptions[index].toggle()
+    }
+    
+    private func expandableDescriptionView (description: Description, index: Int) -> some View {
+        let description = description
         
-        let descriptions = product.descriptions
-        
-        return ForEach(descriptions, id: \.self) { description in
-            ExpandableDescriptionView(description: description)
+        return VStack {
+            HStack(alignment: .center) {
+                Text("\(description.title)")
+                    .font(Font.custom("Manrope", size: 12).weight(.semibold))
+                    .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+                Spacer()
+                Button {
+                    withAnimation(.easeInOut.speed(1.3)) {
+                        toggleDescription(index: index)
+                    }
+                } label: {
+                    Image(expandedDescriptions[index] ? "expanded-icon" : "rolled-icon")
+                        .frame(width: 24, height: 24)
+                }
             }
+            .padding(.leading, 24)
+            .padding(.trailing, 40)
+            .padding(.vertical, 2)
+            .frame(maxWidth: .infinity, alignment: .center)
+            
+            if expandedDescriptions[index] {
+                HStack(alignment: .top, spacing: 24) {
+                    Text("\(description.text)")
+                        .font(Font.custom("Manrope", size: 12))
+                        .foregroundColor(.black)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.leading, 24)
+                .padding(.trailing, 40)
+                .padding(.vertical, 2)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+            }
+        }
     }
 }
 
@@ -99,22 +136,18 @@ extension ProductDetailCardView {
         ],
         descriptions: [
             Description(
-                isExpanded: true,
                 title: "Подробнее об изделии",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Подобрать размер",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Состав",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Уход",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             )

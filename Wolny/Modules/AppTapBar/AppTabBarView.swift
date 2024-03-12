@@ -25,22 +25,18 @@ struct AppTabBarView: View {
         ],
         descriptions: [
             Description(
-                isExpanded: true,
                 title: "Подробнее об изделии",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Подобрать размер",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Состав",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Уход",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             )

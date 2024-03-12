@@ -31,20 +31,62 @@ struct ProductCardView: View {
                 .font(DetailProductCardViewStyle.productNameFont)
                 .foregroundColor(DetailProductCardViewStyle.productNameColor)
             
-            PriceView(
+            pricesView(
                 hasSale: product.hasSale,
                 fullPrice: product.fullPrice,
-                salePrice: product.salePrice!
+                salePrice: product.salePrice
             )
-            productAdvantages(advantages: product.advantages)
+            
+            advantagesView(
+                advantages: product.advantages
+            )
         }
         .padding(.vertical, 8)
     }
 }
 
 extension ProductCardView {
-    func productAdvantages(advantages: [String]? = []) -> some View {
-        
+    private func pricesView(hasSale: Bool, fullPrice: String, salePrice: String) -> some View {
+        let hasSale = hasSale
+        let salePrice = salePrice
+        let fullPrice = fullPrice
+
+        return HStack {
+            fullPriceView(fullPrice: fullPrice, hasSale: hasSale)
+            if hasSale {
+                salePriceView(salePrice: salePrice)
+            }
+        }
+    }
+    
+    private func fullPriceView(fullPrice: String, hasSale: Bool) -> some View {
+        let fullPrice = fullPrice
+        let hasSale = hasSale
+            
+        if hasSale {
+            return Text(fullPrice)
+                .font(PriceViewStyle.fullPriceFont)
+                .foregroundColor(PriceViewStyle.fullPriceHasSaleColor)
+                .strikethrough()
+        } else {
+            return Text(fullPrice)
+                .font(PriceViewStyle.fullPriceFont)
+                .foregroundColor(PriceViewStyle.fullPriceColor)
+        }
+    }
+    
+    private func salePriceView(salePrice: String) -> some View {
+        let salePrice = salePrice
+            
+        return Text(salePrice)
+            .font(PriceViewStyle.salePriceFont)
+            .foregroundColor(PriceViewStyle.salePriceColor)
+    }
+}
+
+
+extension ProductCardView {
+    func advantagesView(advantages: [String]? = []) -> some View {
         let advantages = advantages!.prefix(3)
 
         return HStack {
@@ -60,9 +102,13 @@ extension ProductCardView {
     }
 }
 
+extension ProductCardView {
+    func expandableDescriptions() -> some View {
+        return Text("")
+    }
+}
 
 #Preview {
-    
     let product = Product(
         productName: "AUTUMN / BROWN COAT / CLASSIC",
         image: "sample3",
@@ -78,22 +124,18 @@ extension ProductCardView {
         ],
         descriptions: [
             Description(
-                isExpanded: true,
                 title: "Подробнее об изделии",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Подобрать размер",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Состав",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             ),
             Description(
-                isExpanded: false,
                 title: "Уход",
                 text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
             )

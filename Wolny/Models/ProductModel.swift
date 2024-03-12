@@ -8,12 +8,11 @@
 import Foundation
 
 public struct Product: Hashable, Codable {
-    
     let productName: String
     let image: String
     var hasSale: Bool
     let fullPrice: String
-    let salePrice: String?
+    let salePrice: String
     let advantages: [String]
     let sizes: [ProductSize]
     let descriptions: [Description]
@@ -23,7 +22,7 @@ public struct Product: Hashable, Codable {
         image: String,
         hasSale: Bool = false,
         fullPrice: String,
-        salePrice: String?,
+        salePrice: String = "",
         advantages: [String] = [],
         sizes: [ProductSize],
         descriptions: [Description]
@@ -44,3 +43,15 @@ public struct ProductSize: Hashable, Codable {
     let inStock: Bool
 }
 
+public struct Description: Hashable, Codable {
+    let title: String
+    let text: String
+    
+    init(
+        title: String,
+        text: String
+    ) {
+        self.title = title
+        self.text = text
+    }
+}
