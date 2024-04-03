@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BagScreenView: View {
+struct BagTabView: View {
     var body: some View {
         Text("Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies.")
     }
 }
 
 #Preview {
-    BagScreenView()
+    BagTabView()
 }

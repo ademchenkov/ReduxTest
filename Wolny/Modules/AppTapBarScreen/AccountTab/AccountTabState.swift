@@ -7,27 +7,27 @@
 
 import Foundation
 
-struct AccountScreenState: ReduxState, Codable {
+struct AccountTabState: ReduxState, Codable {
     let userName: String
     let email: String
 }
 
-extension AccountScreenState {
+extension AccountTabState {
     init() {
         userName = "IVAN PETROV"
         email = "ivan.petrov@test.test"
     }
 }
 
-enum AccountScreenStateAction: ReduxAction {
+enum AccountTabStateAction: ReduxAction {
     case setProfile(userName: String, email: String)
 }
 
-extension AccountScreenState {
+extension AccountTabState {
     static let reducer: Reducer<Self> = { state, action in
         switch action {
-        case AccountScreenStateAction.setProfile(let userName, let email):
-            return AccountScreenState(
+        case AccountTabStateAction.setProfile(let userName, let email):
+            return AccountTabState(
                 userName: userName,
                 email: email
             )

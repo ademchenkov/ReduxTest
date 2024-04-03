@@ -43,7 +43,7 @@ struct CustomTabBarContainerView<Content: View>: View {
     
     return VStack {
         CustomTabBarContainerView(selection: .constant(tabs.first!)) {
-            HomeScreenView()
+            HomeTabView()
         }
     }
 }

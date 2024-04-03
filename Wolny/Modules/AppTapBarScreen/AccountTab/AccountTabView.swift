@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AccountScreenView: View {
+struct AccountTabView: View {
     @EnvironmentObject var store: Store<AppState>
     
     var body: some View {
@@ -26,9 +26,9 @@ struct AccountScreenView: View {
         initialState: AppState(),
         reducer: AppState.reducer
     )
-    return AccountScreenView().environmentObject(store)
+    return AccountTabView().environmentObject(store)
 }
 
 #Preview {
-    AccountScreenView()
+    AccountTabView()
 }

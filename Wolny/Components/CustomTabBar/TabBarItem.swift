@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-//struct TabBarItem: Hashable {
-//    let title: String
-//}
-
 enum TabBarItem: Hashable {
     case home, catalog, account, bag
     

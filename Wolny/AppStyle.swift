@@ -8,10 +8,26 @@
 import Foundation
 import SwiftUI
 
+
+public struct CustomFont {
+    
+    static let h1: Font = .custom("Manrope", size: 18).weight(.bold)
+    static let h2: Font = .custom("Manrope", size: 16)
+    static let h3: Font = .custom("Manrope", size: 13).weight(.semibold)
+    static let h4: Font = .custom("Manrope", size: 12)
+}
+
+public struct CustomColor {
+    
+    static let firmBlack: Color = Color(red: 0.09, green: 0.09, blue: 0.09)
+    static let firmGray: Color = Color(red: 0.44, green: 0.44, blue: 0.45)
+}
+
+
 struct CustomTabBarViewStyle {
     
     static let textColor: Color = .white
-    static let backgroundColor: Color = .firmGray
+    static let backgroundColor: Color = CustomColor.firmGray
     static let font: Font = .custom("Manrope", size: 13)
 }
 

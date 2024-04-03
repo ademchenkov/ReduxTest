@@ -1,16 +1,60 @@
 //
-//  AppTabBarView.swift
+//  CatalogScreenView.swift
 //  ReduxTest
 //
-//  Created by Anton Demchenkov on 02.03.2024.
+//  Created by Anton Demchenkov on 24.02.2024.
 //
 
 import SwiftUI
 
-struct AppTabBarView: View {
-    @EnvironmentObject var store: Store<AppState>
+struct CatalogTabView: View {
     
-    @State private var product: Product = Product(
+    @State private var product: Product
+    
+    init(
+        product: Product
+    ) {
+        self.product = product
+    }
+    
+    var body: some View {
+        VStack {
+            header()
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 0)
+                .frame(maxWidth: .infinity, maxHeight: 40)
+            ProductDetailCardView(product: product)
+        }
+    }
+}
+
+extension CatalogTabView {
+    
+    private func header () -> some View {
+        
+        return ZStack {
+            Text("Каталог")
+                .font(
+                    Font.custom("Manrope", size: 18)
+                        .weight(.semibold)
+        
+                )
+                .foregroundColor(.black)
+            
+            HStack(){
+                Spacer()
+                Image("catalog-icon")
+                    .resizable()
+                    .scaledToFit()
+            }
+        }
+    }
+}
+
+
+#Preview {
+    let product = Product(
         productName: "AUTUMN / BROWN COAT / CLASSIC",
         image: "sample3",
         hasSale: true,
@@ -42,34 +86,6 @@ struct AppTabBarView: View {
             )
         ]
     )
-    
- //   @State private var selection: String = "home"
-    @State private var tabSelection: TabBarItem = .home
-    
-    var body: some View {
-        CustomTabBarContainerView(selection: $tabSelection) {
-            HomeScreenView()
-                .tabBarItem(tab: .home, selection: $tabSelection)
-            CatalogScreenView(product: product)
-                .tabBarItem(tab: .catalog, selection: $tabSelection)
-            AccountScreenView()
-                .tabBarItem(tab: .account, selection: $tabSelection)
-//            Test1ScreenView()
-//                .tabBarItem(tab: .bag, selection: $tabSelection)
-            BagScreenView()
-                .tabBarItem(tab: .bag, selection: $tabSelection)
-        }
-        .onChange(of: tabSelection) {
-            store.dispatch(AppTapBarStateAction.selectTab(tab: tabSelection))
-        }
-    }
-}
-
-#Preview {
-    let store = Store<AppState>(
-        initialState: AppState(),
-        reducer: AppState.reducer
-    )
-    return AppTabBarView()
-        .environmentObject(store)
+  
+    return CatalogTabView(product: product)
 }
