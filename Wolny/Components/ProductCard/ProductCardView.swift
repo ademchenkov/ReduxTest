@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductCardView: View {
     
+    @Environment (\.colorScheme) var colorScheme
     @State private var product: Product
     
     init(
@@ -19,92 +20,98 @@ struct ProductCardView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0) {
             Image(product.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 375, height: 450)
+                .frame(width: 395, height: 450)
                 .clipped()
-                .padding(.horizontal, 8)
-            
-            Text(product.productName)
-                .font(DetailProductCardViewStyle.productNameFont)
-                .foregroundColor(DetailProductCardViewStyle.productNameColor)
-            
-            pricesView(
-                hasSale: product.hasSale,
-                fullPrice: product.fullPrice,
-                salePrice: product.salePrice
-            )
-            
-            advantagesView(
-                advantages: product.advantages
-            )
+        
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 4) {
+                Text(product.productName)
+                    .font(CustomFont.detailCardProductName)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                
+                prices(
+                    hasSale: product.hasSale,
+                    fullPrice: product.fullPrice,
+                    salePrice: product.salePrice
+                )
+                
+                advantages(
+                    advantages: product.advantages
+                )
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 8)
+            .padding(.bottom, 24)
         }
-        .padding(.vertical, 8)
+        .padding(0)
+        .background(colorScheme == .light ? .white : (CustomColor.firmGray))
+        .overlay(
+            Rectangle()
+                .stroke(Color(colorScheme == .light ? (CustomColor.firmGray) : .white), lineWidth: 0.1)
+
+        )
     }
 }
 
 extension ProductCardView {
-    private func pricesView(hasSale: Bool, fullPrice: String, salePrice: String) -> some View {
+    private func prices(hasSale: Bool, fullPrice: String, salePrice: String) -> some View {
         let hasSale = hasSale
         let salePrice = salePrice
         let fullPrice = fullPrice
 
         return HStack {
-            fullPriceView(fullPrice: fullPrice, hasSale: hasSale)
+            fullPriceItem(fullPrice: fullPrice, hasSale: hasSale)
             if hasSale {
-                salePriceView(salePrice: salePrice)
+                salePriceItem(salePrice: salePrice)
             }
         }
     }
     
-    private func fullPriceView(fullPrice: String, hasSale: Bool) -> some View {
+    private func fullPriceItem(fullPrice: String, hasSale: Bool) -> some View {
         let fullPrice = fullPrice
         let hasSale = hasSale
             
         if hasSale {
             return Text(fullPrice)
-                .font(PriceViewStyle.fullPriceFont)
-                .foregroundColor(PriceViewStyle.fullPriceHasSaleColor)
+                .font(CustomFont.detailCardPriceView)
+                .foregroundColor(colorScheme == .light ? (CustomColor.firmGray) : .white)
                 .strikethrough()
         } else {
             return Text(fullPrice)
-                .font(PriceViewStyle.fullPriceFont)
-                .foregroundColor(PriceViewStyle.fullPriceColor)
+                .font(CustomFont.detailCardPriceView)
+                .foregroundColor(colorScheme == .light ? .black : .white)
+                .fontWeight(.semibold)
         }
     }
     
-    private func salePriceView(salePrice: String) -> some View {
+    private func salePriceItem(salePrice: String) -> some View {
         let salePrice = salePrice
             
         return Text(salePrice)
-            .font(PriceViewStyle.salePriceFont)
-            .foregroundColor(PriceViewStyle.salePriceColor)
+            .font(CustomFont.detailCardPriceView)
+            .foregroundColor(colorScheme == .light ? .black : .white)
+            .fontWeight(.semibold)
     }
 }
 
 
 extension ProductCardView {
-    func advantagesView(advantages: [String]? = []) -> some View {
+    func advantages(advantages: [String]? = []) -> some View {
         let advantages = advantages!.prefix(3)
 
         return HStack {
             ForEach(advantages, id: \.self) { advantage in
                 Text("\(advantage)")
-                    .font(DetailProductCardViewStyle.productAdvantageFont)
+                    .font(CustomFont.detailCardProductAdvantage)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 1)
-                    .foregroundColor(DetailProductCardViewStyle.productAdvantageColor)
-                    .background(DetailProductCardViewStyle.productAdvantageBackgroundColor)
+                    .foregroundColor(colorScheme == .light ? .white : (CustomColor.firmGray))
+                    .background(colorScheme == .light ? (CustomColor.firmGray) : .white)
             }
         }
-    }
-}
-
-extension ProductCardView {
-    func expandableDescriptions() -> some View {
-        return Text("")
     }
 }
 

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CustomTabBarView: View {
     
+    @Environment (\.colorScheme) var colorScheme
     @Binding var selection: TabBarItem
+    
     let tabs: [TabBarItem]
     
     var body: some View {
@@ -26,7 +28,7 @@ struct CustomTabBarView: View {
         .padding(.horizontal, 24)
         .padding(.top, 4)
         .frame(maxWidth: .infinity, minHeight: 32, maxHeight: 32, alignment: .top)
-        .background(Color(red: 0.35, green: 0.34, blue: 0.34))
+        .background(colorScheme == .light ? .white : Color(CustomColor.firmGray))
     }
     
     private func switchToTab(tab: TabBarItem) {
@@ -41,14 +43,13 @@ extension CustomTabBarView {
     private func tabView(tab: TabBarItem) -> some View {
         VStack(alignment: .center, spacing: 10) {
             Text(tab.title)
-                .font(CustomTabBarViewStyle.font)
-                .fontWeight(selection == tab ? .black : .medium)
-                .foregroundColor(CustomTabBarViewStyle.textColor)
+                .font(selection == tab ? (CustomFont.activeTabItem) : (CustomFont.tabItem))
+                .foregroundColor(colorScheme == .light ? CustomColor.firmGray : .white)
         }
         .padding(.top, 8)
         .padding(.bottom, 32)
         .frame(maxHeight: .infinity)
-        .background(CustomTabBarViewStyle.backgroundColor)
+        .background(colorScheme == .light ? .white : CustomColor.firmGray)
     }
 }
 
