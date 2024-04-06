@@ -17,12 +17,7 @@ struct AppTabBarView: View {
         fullPrice: "10000 ₽",
         salePrice: "8000 ₽",
         advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-        sizes: [
-            ProductSize(name: "XS", inStock: true),
-            ProductSize(name: "S", inStock: true),
-            ProductSize(name: "M", inStock: false),
-            ProductSize(name: "L", inStock: true),
-        ],
+        sizes: ["XS", "S", "M","L"],
         descriptions: [
             Description(
                 title: "Подробнее об изделии",
@@ -43,6 +38,90 @@ struct AppTabBarView: View {
         ]
     )
     
+    @State private var products: [Product] = [
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+    ]
+    
     @State private var tabSelection: TabBarItem = .home
     
     var body: some View {
@@ -50,7 +129,7 @@ struct AppTabBarView: View {
         CustomTabBarContainerView(selection: $tabSelection) {
             HomeTabView()
                 .tabBarItem(tab: .home, selection: $tabSelection)
-            CatalogTabView(product: product)
+            CatalogTabView(products: products)
                 .tabBarItem(tab: .catalog, selection: $tabSelection)
             AccountTabView()
                 .tabBarItem(tab: .account, selection: $tabSelection)

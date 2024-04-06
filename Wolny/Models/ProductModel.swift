@@ -14,7 +14,7 @@ public struct Product: Hashable, Codable {
     let fullPrice: String
     let salePrice: String
     let advantages: [String]
-    let sizes: [ProductSize]
+    let sizes: [String]
     let descriptions: [Description]
     
     init(
@@ -24,7 +24,7 @@ public struct Product: Hashable, Codable {
         fullPrice: String,
         salePrice: String = "",
         advantages: [String] = [],
-        sizes: [ProductSize],
+        sizes: [String],
         descriptions: [Description]
     ) {
         self.productName = productName
@@ -36,11 +36,6 @@ public struct Product: Hashable, Codable {
         self.sizes = sizes
         self.descriptions = descriptions
     }
-}
-
-public struct ProductSize: Hashable, Codable {
-    let name: String
-    let inStock: Bool
 }
 
 public struct Description: Hashable, Codable {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProductDetailCardView: View {
+    
+    @Environment (\.colorScheme) var colorScheme
     @State private var product: Product
     @State private var expandedDescriptions: [Bool]
     
@@ -15,63 +17,54 @@ struct ProductDetailCardView: View {
         self._product = State(initialValue: product)
         self._expandedDescriptions = State(initialValue: Array(repeating: true, count: product.descriptions.count))
     }
-        
+    
     var body: some View {
-        ScrollView() {
-            VStack() {
-                HStack() {
-                    Image("back-icon")
-                        .resizable()
-                        .scaledToFit()
-                    Spacer()
-                }
-                .frame(maxHeight: 16)
-                .padding(.horizontal, 8)
-            }
-            
+
+        VStack(spacing: 0) {
             ProductCardView(product: product)
             productSizes(sizes: product.sizes)
-            productDescriptionsView()
+            productDescriptions
         }
     }
 }
 
 extension ProductDetailCardView {
-    private func productSizes(sizes: [ProductSize]? = []) -> some View {
+    private func productSizes(sizes: [String]? = []) -> some View {
         
         let sizes = sizes!.prefix(4)
         
         return HStack(alignment: .center, spacing: 16) {
-            ForEach(sizes, id: \.self) { size in
+            ForEach(sizes, id: \.self) { sizes in
                 HStack {
-                    Text("\(size.name)")
+                    Text("\(sizes)")
                         .font(
-                            Font.custom("Manrope", size: 12)
+                            CustomFont.detailCardProductAdvantage
                                 .weight(.medium)
                         )
+                        .foregroundStyle(Color(colorScheme == .light ? .black : .white))
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 0)
                 .frame(width: 64, height: 24, alignment: .center)
-                .background(size.inStock ?  Color.clear : Color(red: 0.35, green: 0.34, blue: 0.34).opacity(0.35))
                 .overlay(
                     Rectangle()
                         .inset(by: 0.2)
-                        .stroke(Color(red: 0.35, green: 0.34, blue: 0.34), lineWidth: 0.4)
+                        .stroke((colorScheme == .light ? CustomColor.firmGray : .white), lineWidth: 0.4)
                 )
             }
         }
         .padding(.horizontal, 24)
-        .padding(.vertical, 8)
+        .padding(.bottom, 8)
         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 40)
+        .background(Color(colorScheme == .light ? .white : CustomColor.firmGray))
     }
 }
 
 extension ProductDetailCardView {
 
-    private func productDescriptionsView() -> some View {
+    private var productDescriptions: some View {
         ForEach(Array(product.descriptions.enumerated()), id: \.element) { index, description in
-            expandableDescriptionView(description: description, index: index)
+            expandableDescription(description: description, index: index)
         }
     }
     
@@ -79,21 +72,21 @@ extension ProductDetailCardView {
         expandedDescriptions[index].toggle()
     }
     
-    private func expandableDescriptionView (description: Description, index: Int) -> some View {
+    private func expandableDescription (description: Description, index: Int) -> some View {
         let description = description
         
         return VStack {
             HStack(alignment: .center) {
                 Text("\(description.title)")
-                    .font(Font.custom("Manrope", size: 12).weight(.semibold))
-                    .foregroundColor(Color(red: 0.09, green: 0.09, blue: 0.09))
+                    .font(CustomFont.detailCardProductDescription.weight(.semibold))
+                    .foregroundColor(Color(colorScheme == .light ? .black : .white))
                 Spacer()
                 Button {
                     withAnimation(.easeInOut.speed(1.3)) {
                         toggleDescription(index: index)
                     }
                 } label: {
-                    Image(expandedDescriptions[index] ? "expanded-icon" : "rolled-icon")
+                    Image(expandedDescriptions[index] ? (colorScheme == .light ? "expanded-icon-light" : "expanded-icon-dark") : (colorScheme == .light ? "rolled-icon-light" : "rolled-icon-dark"))
                         .frame(width: 24, height: 24)
                 }
             }
@@ -105,8 +98,8 @@ extension ProductDetailCardView {
             if expandedDescriptions[index] {
                 HStack(alignment: .top, spacing: 24) {
                     Text("\(description.text)")
-                        .font(Font.custom("Manrope", size: 12))
-                        .foregroundColor(.black)
+                        .font(CustomFont.detailCardProductDescription)
+                        .foregroundColor(Color(colorScheme == .light ? .black : .white))
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.leading, 24)
@@ -115,6 +108,7 @@ extension ProductDetailCardView {
                 .frame(maxWidth: .infinity, alignment: .topLeading)
             }
         }
+        .background(Color(colorScheme == .light ? .white : CustomColor.firmGray))
     }
 }
 
@@ -128,12 +122,7 @@ extension ProductDetailCardView {
         fullPrice: "10000 ₽",
         salePrice: "8000 ₽",
         advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-        sizes: [
-            ProductSize(name: "XS", inStock: true),
-            ProductSize(name: "S", inStock: true),
-            ProductSize(name: "M", inStock: false),
-            ProductSize(name: "L", inStock: true),
-        ],
+        sizes: ["XS", "S", "M", "L"],
         descriptions: [
             Description(
                 title: "Подробнее об изделии",
@@ -154,5 +143,5 @@ extension ProductDetailCardView {
         ]
     )
   
-    return ProductDetailCardView(product: product)
+    return (ProductDetailCardView(product: product))
 }

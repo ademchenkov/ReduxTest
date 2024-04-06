@@ -20,6 +20,7 @@ public struct CustomFont {
     static let detailCardProductName: Font = .custom("Manrope", size: 12)
     static let detailCardPriceView: Font = .custom("Manrope", size: 13)
     static let detailCardProductAdvantage: Font = .custom("Manrope", size: 12)
+    static let detailCardProductDescription: Font = .custom("Manrope", size: 12)
     
     
     static let activeTabItem: Font = .custom("Manrope", size: 13).weight(.black)

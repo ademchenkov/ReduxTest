@@ -44,7 +44,7 @@ struct ProductCardView: View {
             }
             .padding(.horizontal, 24)
             .padding(.top, 8)
-            .padding(.bottom, 24)
+            .padding(.bottom, 16)
         }
         .padding(0)
         .background(colorScheme == .light ? .white : (CustomColor.firmGray))
@@ -123,12 +123,7 @@ extension ProductCardView {
         fullPrice: "10000 ₽",
         salePrice: "8000 ₽",
         advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-        sizes: [
-            ProductSize(name: "XS", inStock: true),
-            ProductSize(name: "S", inStock: true),
-            ProductSize(name: "M", inStock: false),
-            ProductSize(name: "L", inStock: true),
-        ],
+        sizes: ["XS", "S", "M","L"],
         descriptions: [
             Description(
                 title: "Подробнее об изделии",

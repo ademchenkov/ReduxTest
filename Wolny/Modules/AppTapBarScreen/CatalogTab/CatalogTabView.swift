@@ -9,83 +9,112 @@ import SwiftUI
 
 struct CatalogTabView: View {
     
-    @State private var product: Product
+    var products: [Product] = []
     
-    init(
-        product: Product
-    ) {
-        self.product = product
+    init(products: [Product]) {
+        self.products = products
     }
     
     var body: some View {
-        VStack {
-            header()
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 0)
-                .frame(maxWidth: .infinity, maxHeight: 40)
-            ProductDetailCardView(product: product)
-        }
-    }
-}
-
-extension CatalogTabView {
-    
-    private func header () -> some View {
-        
-        return ZStack {
-            Text("Каталог")
-                .font(
-                    Font.custom("Manrope", size: 18)
-                        .weight(.semibold)
-        
-                )
-                .foregroundColor(.black)
-            
-            HStack(){
-                Spacer()
-                Image("catalog-icon")
-                    .resizable()
-                    .scaledToFit()
+        CustomNavBarContainerView {
+            ScrollView {
+                VStack(spacing: 0) {
+                    ForEach (products, id: \.self) { products in
+                        ProductCardView(product: products)
+                    }
+                }
             }
+            .customNavigationBarItems(title: "Каталог", backButtonHidden: true)
         }
     }
 }
-
 
 #Preview {
-    let product = Product(
-        productName: "AUTUMN / BROWN COAT / CLASSIC",
-        image: "sample3",
-        hasSale: true,
-        fullPrice: "10000 ₽",
-        salePrice: "8000 ₽",
-        advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-        sizes: [
-            ProductSize(name: "XS", inStock: true),
-            ProductSize(name: "S", inStock: true),
-            ProductSize(name: "M", inStock: false),
-            ProductSize(name: "L", inStock: true),
-        ],
-        descriptions: [
-            Description(
-                title: "Подробнее об изделии",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Подобрать размер",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Состав",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Уход",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            )
-        ]
-    )
-  
-    return CatalogTabView(product: product)
+    
+    let products = [
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+        Product(
+            productName: "AUTUMN / BROWN COAT / CLASSIC",
+            image: "sample3",
+            hasSale: true,
+            fullPrice: "10000 ₽",
+            salePrice: "8000 ₽",
+            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
+            sizes: ["XS", "S", "M", "L"],
+            descriptions: [
+                Description(
+                    title: "Подробнее об изделии",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Подобрать размер",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Состав",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                ),
+                Description(
+                    title: "Уход",
+                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
+                )
+            ]
+        ),
+    ]
+    
+    return CatalogTabView(products: products)
+    
 }
