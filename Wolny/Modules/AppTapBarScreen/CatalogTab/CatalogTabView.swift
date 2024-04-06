@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CatalogTabView: View {
     
+    @Environment (\.colorScheme) var colorScheme
     var products: [Product] = []
     
     init(products: [Product]) {
@@ -25,6 +26,7 @@ struct CatalogTabView: View {
                 }
             }
             .customNavigationBarItems(title: "Каталог", backButtonHidden: true)
+            .background(colorScheme == .light ? .white : CustomColor.firmGray)
         }
     }
 }
