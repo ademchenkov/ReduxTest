@@ -26,6 +26,7 @@
 		598BFAC32B9E46BC00984F13 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598BFAC22B9E46BC00984F13 /* ProductModel.swift */; };
 		599EB5842BACA6F100B263C3 /* PreferenceKeyTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599EB5832BACA6F100B263C3 /* PreferenceKeyTest.swift */; };
 		59BD166F2B87FC4800D70CFB /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BD166E2B87FC4800D70CFB /* HomeTabView.swift */; };
+		59C627932BC939C600F06591 /* AppMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C627922BC939C600F06591 /* AppMocks.swift */; };
 		59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */; };
 		59CBFED22B932AA40033AFBF /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */; };
 		59CBFED42B9389530033AFBF /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBFED32B9389530033AFBF /* AppTabBarView.swift */; };
@@ -66,6 +67,7 @@
 		598BFAC22B9E46BC00984F13 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		599EB5832BACA6F100B263C3 /* PreferenceKeyTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeyTest.swift; sourceTree = "<group>"; };
 		59BD166E2B87FC4800D70CFB /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
+		59C627922BC939C600F06591 /* AppMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMocks.swift; sourceTree = "<group>"; };
 		59CBFECF2B931EF90033AFBF /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		59CBFED12B932AA40033AFBF /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		59CBFED32B9389530033AFBF /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		597783432B76C90300FB451A /* Wolny */ = {
 			isa = PBXGroup;
 			children = (
+				59C627912BC939A700F06591 /* Mocks */,
 				59F1798D2B894E1A007CCBC4 /* Info.plist */,
 				59F179882B893499007CCBC4 /* Fonts */,
 				59BA7C7A2B7A324200C91211 /* Models */,
@@ -198,6 +201,14 @@
 				5910FA652B8D20E80076B6C0 /* CustomTabBar */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		59C627912BC939A700F06591 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				59C627922BC939C600F06591 /* AppMocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		59CBFED72B93A81F0033AFBF /* Modules */ = {
@@ -373,6 +384,7 @@
 				597C1C922BBB5ED90043EADB /* CustomNavBarContainerView.swift in Sources */,
 				5932B48A2BB70A4300217794 /* CustomNavLink.swift in Sources */,
 				59F179972B8A2F16007CCBC4 /* CatalogTabView.swift in Sources */,
+				59C627932BC939C600F06591 /* AppMocks.swift in Sources */,
 				59F3ED812B96771000A86DD7 /* ProductDetailCardView.swift in Sources */,
 				59CBFED02B931EF90033AFBF /* CustomTabBarContainerView.swift in Sources */,
 				597C1C8B2BBB30190043EADB /* MyCustomView.swift in Sources */,

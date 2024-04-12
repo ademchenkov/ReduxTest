@@ -9,118 +9,8 @@ import SwiftUI
 
 struct AppTabBarView: View {
     @EnvironmentObject var store: Store<AppState>
-    
-    @State private var product: Product = Product(
-        productName: "AUTUMN / BROWN COAT / CLASSIC",
-        image: "sample3",
-        hasSale: true,
-        fullPrice: "10000 ₽",
-        salePrice: "8000 ₽",
-        advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-        sizes: ["XS", "S", "M","L"],
-        descriptions: [
-            Description(
-                title: "Подробнее об изделии",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Подобрать размер",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Состав",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            ),
-            Description(
-                title: "Уход",
-                text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-            )
-        ]
-    )
-    
-    @State private var products: [Product] = [
-        Product(
-            productName: "AUTUMN / BROWN COAT / CLASSIC",
-            image: "sample3",
-            hasSale: true,
-            fullPrice: "10000 ₽",
-            salePrice: "8000 ₽",
-            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-            sizes: ["XS", "S", "M", "L"],
-            descriptions: [
-                Description(
-                    title: "Подробнее об изделии",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Подобрать размер",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Состав",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Уход",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                )
-            ]
-        ),
-        Product(
-            productName: "AUTUMN / BROWN COAT / CLASSIC",
-            image: "sample3",
-            hasSale: true,
-            fullPrice: "10000 ₽",
-            salePrice: "8000 ₽",
-            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-            sizes: ["XS", "S", "M", "L"],
-            descriptions: [
-                Description(
-                    title: "Подробнее об изделии",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Подобрать размер",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Состав",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Уход",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                )
-            ]
-        ),
-        Product(
-            productName: "AUTUMN / BROWN COAT / CLASSIC",
-            image: "sample3",
-            hasSale: true,
-            fullPrice: "10000 ₽",
-            salePrice: "8000 ₽",
-            advantages: ["Italian Cotton", "Eco", "25 % Sale"],
-            sizes: ["XS", "S", "M", "L"],
-            descriptions: [
-                Description(
-                    title: "Подробнее об изделии",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Подобрать размер",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Состав",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                ),
-                Description(
-                    title: "Уход",
-                    text: "Lorem ipsum dolor sit amet consectetur. \nTurpis libero feugiat convallis pharetra. \nNisl venenatis rhoncus elementum aliquet ultricies."
-                )
-            ]
-        ),
-    ]
+     
+    @State private var products: [Product] = mockProducts
     
     @State private var tabSelection: TabBarItem = .home
     
@@ -136,8 +26,12 @@ struct AppTabBarView: View {
             BagTabView()
                 .tabBarItem(tab: .bag, selection: $tabSelection)
         }
-        .onChange(of: tabSelection) {
-            store.dispatch(AppTapBarStateAction.selectTab(tab: tabSelection))
+        .onChange(of: store.currentState.appTapBar.tabSelection) { _, newValue in
+            tabSelection = newValue
+            print("AppTabBarState selectedTab :\(store.currentState.appTapBar.tabSelection)")
+        }
+        .onChange(of: tabSelection) { _, newValue in
+            store.dispatch(AppTapBarStateAction.selectTab(tab: newValue))
             print("AppTabBarState selectedTab :\(store.currentState.appTapBar.tabSelection)")
         }
     }
