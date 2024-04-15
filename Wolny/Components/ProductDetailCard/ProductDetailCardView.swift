@@ -19,11 +19,12 @@ struct ProductDetailCardView: View {
     }
     
     var body: some View {
-
-        VStack(spacing: 0) {
-            ProductCardView(product: product)
-            productSizes(sizes: product.sizes)
-            productDescriptions
+        ScrollView{
+            VStack(spacing: 0) {
+                ProductCardView(product: product)
+                productSizes(sizes: product.sizes)
+                productDescriptions
+            }
         }
     }
 }

@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct AppTabBarView: View {
-    @EnvironmentObject var store: Store<AppState>
-     
-    @State private var products: [Product] = mockProducts
     
+    @EnvironmentObject var store: Store<AppState>
+    @State private var products: [Product] = mockProducts
     @State private var tabSelection: TabBarItem = .home
     
     var body: some View {
         
-        CustomTabBarContainerView(selection: $tabSelection) {
+        CustomTabBarContainerView() {
             HomeTabView()
                 .tabBarItem(tab: .home, selection: $tabSelection)
             CatalogTabView(products: products)

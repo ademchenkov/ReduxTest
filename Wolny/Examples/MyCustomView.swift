@@ -18,7 +18,7 @@ struct MyCustomView: View {
     
     
     var body: some View {
-        CustomTabBarContainerView(selection: .constant(tabs.first!)) {
+        CustomTabBarContainerView() {
             AppNavBarView()
         }    }
 }

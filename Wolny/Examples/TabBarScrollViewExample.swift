@@ -30,7 +30,7 @@ struct TabBarScrollViewExample: View {
                     }
             }
             .padding(.bottom, tabBarOffSet)
-            CustomTabBarView(selection: .constant(tabs.first!), tabs: tabs)
+            CustomTabBarView(tabs: tabs)
                 .offset(
                     y:scrollViewOffset > 73 ? 0 :(scrollViewOffset > 0 ? (73 - scrollViewOffset) : 73)
                 )

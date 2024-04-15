@@ -9,7 +9,7 @@ import Foundation
 
 let mockProducts: [Product] = [
     Product(
-        productName: "AUTUMN / BROWN COAT / CLASSIC",
+        productName: "AUTUMN / BROWN COAT / CLASSIC 1",
         image: "sample3",
         hasSale: true,
         fullPrice: "10000 ₽",
@@ -36,8 +36,8 @@ let mockProducts: [Product] = [
         ]
     ),
     Product(
-        productName: "AUTUMN / BROWN COAT / CLASSIC",
-        image: "sample3",
+        productName: "AUTUMN / BROWN COAT / CLASSIC 2",
+        image: "sample4",
         hasSale: true,
         fullPrice: "10000 ₽",
         salePrice: "8000 ₽",
@@ -63,8 +63,8 @@ let mockProducts: [Product] = [
         ]
     ),
     Product(
-        productName: "AUTUMN / BROWN COAT / CLASSIC",
-        image: "sample3",
+        productName: "AUTUMN / BROWN COAT / CLASSIC 3",
+        image: "sample5",
         hasSale: true,
         fullPrice: "10000 ₽",
         salePrice: "8000 ₽",
